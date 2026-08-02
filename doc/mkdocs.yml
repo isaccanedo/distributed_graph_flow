@@ -1,0 +1,92 @@
+site_name: Distributed Graph Flow
+site_url: https://dgf.readthedocs.io/
+theme: readthedocs
+use_directory_urls: false
+repo_url: https://github.com/google/distributed_graph_flow
+repo_name: google/distributed_graph_flow
+
+theme:
+  name: material
+  favicon: image/icon_128.png
+  logo: image/icon_128.png
+  font:
+    text: Roboto
+  features:
+    - search.suggest
+    - navigation.expand
+  palette:
+    - scheme: default
+      primary: white
+      accent: blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+
+extra_css:
+  - style/extra.css
+
+markdown_extensions:
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+
+plugins:
+  - search
+  - mkdocs-jupyter:
+      include_source: true   # Shows the "Download Notebook" button
+      execute: false         # Set to 'true' if you want MkDocs to run the cells during build
+      ignore: ["*.md"]
+  - gen-files:
+      scripts:
+        - copy_external.py
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_root_heading: true 
+            show_root_full_path: true
+            show_signature: false
+            show_root_heading: false
+            show_bases: true
+            show_source: false
+
+strict: false
+
+nav:
+  - 🏡 Home: index.md
+  - 🧭 Getting started: tutorial/getting_started_simple_api.ipynb
+  - 🔥 Advanced API: tutorial/getting_started_advanced_api.ipynb
+  - 🐜 API: api.md
+  - ❔ Q&A: qna.md
+  - 📖 Examples: https://github.com/google/distributed_graph_flow/tree/main/examples
+  - 🤸 For Googlers: http://go/graph-flow
+  - Simple API:
+    - Tasks:
+      - Node model: tutorial/node_prediction.ipynb
+      - Link model: tutorial/link_prediction.ipynb
+  - Advanced API:
+    - In-memory graph: tutorial/in_memory_graph.ipynb
+    - Sampler: tutorial/sampler.ipynb
+    - Normaliers: tutorial/normalizer.ipynb
+  - Guides:
+    -   Graph file format: file_formats.md
+    -   Graph in-memory objects: graph_formats.md
+  - Changelog: changelog.md
+
+extra:
+  analytics:
+    provider: google
+    property: G-B6NFSCCG1B
+
+watch:
+  - ../CHANGELOG.md
