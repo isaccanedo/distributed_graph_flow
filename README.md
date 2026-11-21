@@ -1,4 +1,4 @@
-# Distributed Graph Flow
+## Distributed Graph Flow
 
 <p align="center">
 <img src="doc/docs/image/logo.png" width="300" />
